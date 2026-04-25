@@ -19,7 +19,28 @@ Este documento es una guía paso a paso para exponer tu proyecto de forma profes
 
 ---
 
-## 2. Tour por la Interfaz (Visual & UX) 🎨
+## 2. Conceptos Clave: Los Observadores 🧠
+
+*Si te preguntan qué son, aquí tienes la explicación técnica simplificada:*
+
+### 📍 Intersection Observer (El "Radar" de Visibilidad)
+*   **¿Para qué sirve?** Sirve para detectar de forma eficiente cuándo un elemento entra o sale de la pantalla (el viewport).
+*   **¿Qué hace?** En lugar de preguntar todo el tiempo "donde está el elemento", le pide al navegador que le avise solo cuando el elemento cruza un límite. Es ideal para:
+    *   **Lazy Loading:** Cargar imágenes solo cuando se van a ver.
+    *   **Scroll Infinito:** Cargar más datos cuando el usuario llega al final.
+    *   **Animaciones:** Activar efectos solo cuando el usuario mira el componente.
+
+### ⚡ Mutation Observer (El "Guardia" de la Estructura)
+*   **¿Para qué sirve?** Sirve para vigilar cambios en el código HTML (el DOM) de la página sin tener que recargarla.
+*   **¿Qué hace?** Monitorea tres tipos de cambios principales:
+    *   **Atributos:** Si una clase CSS o un ID cambia.
+    *   **Hijos (ChildList):** Si se agregan o eliminan elementos (nodos).
+    *   **Texto (CharacterData):** Si el contenido de texto dentro de un elemento es modificado.
+    *   Es vital para herramientas que necesitan reaccionar a cambios externos o inyecciones de datos en tiempo real.
+
+---
+
+## 3. Tour por la Interfaz (Visual & UX) 🎨
 *Muestra la pantalla principal y describe los bloques rápidamente:*
 
 *   **Header (Métricas):** "Aquí vemos contadores en vivo que se actualizan sin refrescar la página".
@@ -28,7 +49,7 @@ Este documento es una guía paso a paso para exponer tu proyecto de forma profes
 
 ---
 
-## 3. Demostración en Vivo: Súper Poderes ⚡
+## 4. Demostración en Vivo: Súper Poderes ⚡
 
 ### A. IntersectionObserver (El Radar)
 *Baja por el feed lentamente.*
@@ -46,7 +67,7 @@ Este documento es una guía paso a paso para exponer tu proyecto de forma profes
 
 ---
 
-## 4. Inmersión en el Código (Para el Profesor) 💻
+## 5. Inmersión en el Código (Para el Profesor) 💻
 *Abre VS Code y muestra estos archivos específicos:*
 
 ### 📂 `src/hooks/useIntersectionObserver.ts`
@@ -57,7 +78,7 @@ Este documento es una guía paso a paso para exponer tu proyecto de forma profes
 
 ---
 
-## 5. Conclusión & Arquitectura 🏗️
+## 6. Conclusión & Arquitectura 🏗️
 *Termina con una reflexión técnica:*
 
 *   **Rendimiento:** "No estamos usando procesos que corren cada milisegundo. Solo usamos recursos cuando el navegador nos avisa que algo cambió".
